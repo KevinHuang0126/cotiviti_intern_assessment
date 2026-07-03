@@ -1,0 +1,134 @@
+{
+  "criterionId": "NCD-210.14-LDCT-2015",
+  "title": "Lung cancer screening with low-dose CT",
+  "policy": {
+    "policyId": "NCD 210.14",
+    "policyType": "NCD",
+    "version": "CAG-00439N",
+    "effectiveDate": "2015-02-05",
+    "url": "https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?NCDId=364"
+  },
+  "outcome": "covered_with_conditions",
+  "condition": {
+    "op": "and",
+    "of": [
+      {
+        "op": "age",
+        "age": {
+          "min": {
+            "value": 55,
+            "unit": "year"
+          },
+          "max": {
+            "value": 77,
+            "unit": "year"
+          }
+        },
+        "citations": [
+          {
+            "sourceId": "NCD 210.14",
+            "section": "Coverage Indications",
+            "span": {
+              "text": "55 \u2013 77 years"
+            }
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "pack-years",
+          "text": "Tobacco smoking history of at least 30 pack-years",
+          "required": true,
+          "citations": [
+            {
+              "sourceId": "NCD 210.14",
+              "section": "Coverage Indications",
+              "span": {
+                "text": "at least 30 pack-years"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "current-or-former-smoker",
+          "text": "Current smoker, or former smoker who quit within the last 15 years",
+          "required": true,
+          "citations": [
+            {
+              "sourceId": "NCD 210.14",
+              "section": "Coverage Indications",
+              "span": {
+                "text": "quit smoking within the last 15 years"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "asymptomatic",
+          "text": "Asymptomatic (no signs or symptoms of lung cancer)",
+          "required": true,
+          "citations": [
+            {
+              "sourceId": "NCD 210.14",
+              "section": "Coverage Indications",
+              "span": {
+                "text": "asymptomatic"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "sdm-visit",
+          "text": "Counseling and shared decision-making visit (HCPCS G0296) prior to the first screening",
+          "required": true,
+          "citations": [
+            {
+              "sourceId": "NCD 210.14",
+              "section": "Coverage Indications",
+              "span": {
+                "text": "G0296"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "op": "code_set",
+        "codeSet": {
+          "kind": "procedure_covered",
+          "codes": [
+            {
+              "system": "HCPCS",
+              "code": "G0296",
+              "display": "Counseling/SDM visit"
+            },
+            {
+              "system": "HCPCS",
+              "code": "G0297",
+              "display": "LDCT lung cancer screening"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "sourceId": "NCD 210.14",
+            "section": "Coverage Indications",
+            "span": {
+              "text": "G0297"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

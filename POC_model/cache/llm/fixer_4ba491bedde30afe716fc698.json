@@ -1,0 +1,339 @@
+{
+  "patched_rule": {
+    "criterionId": "NCD-210.14-COVERAGE-V1-CRIT1",
+    "policy": {
+      "policyId": "NCD-210.14-COVERAGE-V1",
+      "policyType": "NCD",
+      "version": "CAG-00439N",
+      "effectiveDate": "2015-02-05",
+      "url": ""
+    },
+    "title": "Lung Cancer Screening with LDCT \u2014 Coverage Criteria",
+    "description": "Medicare coverage of annual lung cancer screening with LDCT when all specified criteria are met.",
+    "outcome": "covered_with_conditions",
+    "condition": {
+      "op": "and",
+      "of": [
+        {
+          "op": "age",
+          "age": {
+            "min": {
+              "value": 55,
+              "unit": "year"
+            },
+            "max": {
+              "value": 77,
+              "unit": "year"
+            }
+          },
+          "citations": [
+            {
+              "sourceId": "NCD-210.14-COVERAGE-V1",
+              "section": "NCD-210.14-COVERAGE-V1",
+              "quote": "The beneficiary must be age 55 \u2013 77 years.",
+              "span": {
+                "start": 260,
+                "end": 302,
+                "text": "The beneficiary must be age 55 \u2013 77 years."
+              }
+            }
+          ]
+        },
+        {
+          "op": "or",
+          "of": [
+            {
+              "op": "documentation",
+              "documentation": {
+                "id": "pack-years",
+                "text": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+                "required": true
+              },
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+                  "span": {
+                    "start": 307,
+                    "end": 385,
+                    "text": "The beneficiary must have a tobacco smoking history of at least 30 pack-years."
+                  }
+                }
+              ]
+            },
+            {
+              "op": "manual_review",
+              "reason": "Pack-year smoking history is not documented; cannot confirm the required minimum of 30 pack-years.",
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+                  "span": {
+                    "start": 307,
+                    "end": 385,
+                    "text": "The beneficiary must have a tobacco smoking history of at least 30 pack-years."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "or",
+          "of": [
+            {
+              "op": "documentation",
+              "documentation": {
+                "id": "smoking-status",
+                "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+                "required": true
+              },
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+                  "span": {
+                    "start": 390,
+                    "end": 484,
+                    "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+                  }
+                }
+              ]
+            },
+            {
+              "op": "manual_review",
+              "reason": "Smoking status (current smoker vs. quit within 15 years) is not documented; cannot confirm eligibility.",
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+                  "span": {
+                    "start": 390,
+                    "end": 484,
+                    "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "or",
+          "of": [
+            {
+              "op": "documentation",
+              "documentation": {
+                "id": "asymptomatic",
+                "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+                "required": true
+              },
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+                  "span": {
+                    "start": 489,
+                    "end": 564,
+                    "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+                  }
+                }
+              ]
+            },
+            {
+              "op": "manual_review",
+              "reason": "Asymptomatic status is not documented; cannot confirm this mandatory criterion.",
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+                  "span": {
+                    "start": 489,
+                    "end": 564,
+                    "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "or",
+          "of": [
+            {
+              "op": "documentation",
+              "documentation": {
+                "id": "sdm-visit-order",
+                "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+                "required": true
+              },
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+                  "span": {
+                    "start": 569,
+                    "end": 763,
+                    "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+                  }
+                }
+              ]
+            },
+            {
+              "op": "manual_review",
+              "reason": "SDM visit is documented but presence of the required written order is not confirmed; cannot verify compliance.",
+              "citations": [
+                {
+                  "sourceId": "NCD-210.14-COVERAGE-V1",
+                  "section": "NCD-210.14-COVERAGE-V1",
+                  "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+                  "span": {
+                    "start": 569,
+                    "end": 763,
+                    "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "op": "code_set",
+          "codeSet": {
+            "kind": "procedure_covered",
+            "codes": [
+              {
+                "system": "HCPCS",
+                "code": "G0296",
+                "display": "Counseling visit to discuss need for lung cancer screening using LDCT"
+              },
+              {
+                "system": "HCPCS",
+                "code": "G0297",
+                "display": "Low dose CT scan for lung cancer screening"
+              }
+            ]
+          },
+          "citations": [
+            {
+              "sourceId": "NCD-210.14-COVERAGE-V1",
+              "section": "NCD-210.14-COVERAGE-V1",
+              "quote": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening).",
+              "span": {
+                "start": 768,
+                "end": 880,
+                "text": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "documentation": [
+      {
+        "id": "pack-years",
+        "text": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+        "required": true,
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V1",
+            "section": "NCD-210.14-COVERAGE-V1",
+            "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+            "span": {
+              "start": 307,
+              "end": 385,
+              "text": "The beneficiary must have a tobacco smoking history of at least 30 pack-years."
+            }
+          }
+        ]
+      },
+      {
+        "id": "smoking-status",
+        "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+        "required": true,
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V1",
+            "section": "NCD-210.14-COVERAGE-V1",
+            "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+            "span": {
+              "start": 390,
+              "end": 484,
+              "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+            }
+          }
+        ]
+      },
+      {
+        "id": "asymptomatic",
+        "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+        "required": true,
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V1",
+            "section": "NCD-210.14-COVERAGE-V1",
+            "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+            "span": {
+              "start": 489,
+              "end": 564,
+              "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+            }
+          }
+        ]
+      },
+      {
+        "id": "sdm-visit-order",
+        "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+        "required": true,
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V1",
+            "section": "NCD-210.14-COVERAGE-V1",
+            "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+            "span": {
+              "start": 569,
+              "end": 763,
+              "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+            }
+          }
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "sourceId": "NCD-210.14-COVERAGE-V1",
+        "section": "NCD-210.14-COVERAGE-V1",
+        "quote": "Medicare covers screening for lung cancer with low dose computed tomography (LDCT) once per year when all of the following criteria are met:",
+        "span": {
+          "start": 115,
+          "end": 255,
+          "text": "Medicare covers screening for lung cancer with low dose computed tomography (LDCT) once per year when all of the following criteria are met:"
+        }
+      }
+    ]
+  },
+  "changelog": [
+    {
+      "change": "Fixed age minimum from 50 to 55 to match policy text 'age 55 \u2013 77 years' (was an incorrect/erroneous value not supported by source).",
+      "cite": "The beneficiary must be age 55 \u2013 77 years.",
+      "reason": "Original rule cited '55\u201377' text but encoded min:50, contradicting its own citation; corrected to match cited source, resolving ADV-014 and ADV-015 boundary failures."
+    },
+    {
+      "change": "Wrapped pack-years, smoking-status, asymptomatic, and sdm-visit-order documentation leaves each in an OR with a manual_review branch for missing/undocumented data.",
+      "cite": "Policy requires each criterion but is silent on how to treat missing/ambiguous documentation.",
+      "reason": "Tests ADV-007, ADV-009, ADV-011, ADV-012 expect 'review' outcome when documentation is absent rather than an outright 'deny'; policy does not specify auto-deny on missing documentation, so manual_review is the safe non-invented branch."
+    }
+  ],
+  "unresolved": [
+    {
+      "issue": "ADV-004 (exactly 30 pack-years, quit 10 years ago) and ADV-006 (quit 14.9 years ago) failures appear to stem from evaluation/execution logic (boundary inclusivity for 'at least 30' and 'within 15 years'), not from the rule's condition structure \u2014 the documentation leaves as written already state 'at least 30 pack-years' and 'within the last 15 years' which are inclusive phrasings supporting exact-boundary approval. No rule change made since policy text already supports inclusive boundaries; flagged for evaluator/engine boundary-handling review.",
+      "reason": "Cannot patch evaluation semantics via rule condition alone without inventing new leaf semantics not present in source text."
+    }
+  ]
+}

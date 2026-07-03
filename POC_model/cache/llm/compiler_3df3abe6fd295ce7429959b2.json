@@ -1,0 +1,125 @@
+{
+  "criterionId": "NCD-210.14-COVERAGE-V2-LDCT-LUNG-CANCER-SCREENING",
+  "title": "Lung Cancer Screening with LDCT - Coverage Criteria",
+  "outcome": "covered_with_conditions",
+  "policy": {
+    "policyId": "NCD-210.14-COVERAGE-V2",
+    "policyType": "NCD",
+    "version": "CAG-00439R",
+    "effectiveDate": "2022-02-10"
+  },
+  "condition": {
+    "op": "and",
+    "children": [
+      {
+        "op": "age",
+        "min": 50,
+        "max": 77,
+        "citations": [
+          {
+            "span": {
+              "text": "The beneficiary must be Age 50 - 77 years."
+            }
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "field": "tobacco_smoking_pack_years",
+        "operator": ">=",
+        "value": 20,
+        "citations": [
+          {
+            "span": {
+              "text": "The beneficiary must have a tobacco smoking history of at least 20 pack-years."
+            }
+          }
+        ]
+      },
+      {
+        "op": "or",
+        "children": [
+          {
+            "op": "documentation",
+            "field": "smoking_status",
+            "operator": "==",
+            "value": "current_smoker",
+            "citations": [
+              {
+                "span": {
+                  "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+                }
+              }
+            ]
+          },
+          {
+            "op": "documentation",
+            "field": "years_since_quit_smoking",
+            "operator": "<=",
+            "value": 15,
+            "citations": [
+              {
+                "span": {
+                  "text": "one who has quit smoking within the last 15 years"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "field": "asymptomatic_lung_cancer",
+        "operator": "==",
+        "value": true,
+        "citations": [
+          {
+            "span": {
+              "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+            }
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "field": "written_order_counseling_visit_prior_to_first_screening",
+        "operator": "==",
+        "value": true,
+        "citations": [
+          {
+            "span": {
+              "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+            }
+          }
+        ]
+      },
+      {
+        "op": "code_set",
+        "codeSystem": "HCPCS/CPT",
+        "codes": [
+          "G0296",
+          "71271"
+        ],
+        "citations": [
+          {
+            "span": {
+              "text": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and CPT 71271 (CT thorax low dose for lung cancer screening)."
+            }
+          }
+        ]
+      },
+      {
+        "op": "frequency_in_window",
+        "count": 1,
+        "window": "1 year",
+        "citations": [
+          {
+            "span": {
+              "text": "Medicare covers screening for lung cancer with low dose computed tomography (LDCT) once per year"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

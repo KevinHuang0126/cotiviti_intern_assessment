@@ -1,0 +1,346 @@
+{
+  "claims": [
+    {
+      "id": "ADV-001-AGE-THRESHOLD-LOWER",
+      "claim": {
+        "member_id": "SYNTHETIC-001",
+        "age": 54,
+        "pack_years": 35,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Age is 54, one year below policy minimum of 55",
+        "All other criteria met"
+      ],
+      "predicted_decision": "not_covered",
+      "rationale": "Policy explicitly states 'The beneficiary must be age 55 \u2013 77 years.' Beneficiary is 54, which falls below the stated minimum threshold. Rule specifies minimum age 55.",
+      "policy_cites": [
+        "The beneficiary must be age 55 \u2013 77 years."
+      ]
+    },
+    {
+      "id": "ADV-002-AGE-THRESHOLD-UPPER",
+      "claim": {
+        "member_id": "SYNTHETIC-002",
+        "age": 78,
+        "pack_years": 40,
+        "smoking_status": "quit_5_years_ago",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Age is 78, one year above policy maximum of 77",
+        "All other criteria met"
+      ],
+      "predicted_decision": "not_covered",
+      "rationale": "Policy explicitly states 'The beneficiary must be age 55 \u2013 77 years.' Beneficiary is 78, exceeding the maximum threshold. Rule specifies maximum age 77.",
+      "policy_cites": [
+        "The beneficiary must be age 55 \u2013 77 years."
+      ]
+    },
+    {
+      "id": "ADV-003-PACK-YEARS-BOUNDARY",
+      "claim": {
+        "member_id": "SYNTHETIC-003",
+        "age": 62,
+        "pack_years": 29.5,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Pack-years documented as 29.5, below policy threshold of at least 30",
+        "All other criteria met"
+      ],
+      "predicted_decision": "not_covered",
+      "rationale": "Policy requires 'at least 30 pack-years.' Beneficiary has 29.5 pack-years, which falls below the minimum threshold.",
+      "policy_cites": [
+        "The beneficiary must have a tobacco smoking history of at least 30 pack-years."
+      ]
+    },
+    {
+      "id": "ADV-004-PACK-YEARS-EXACTLY-30",
+      "claim": {
+        "member_id": "SYNTHETIC-004",
+        "age": 60,
+        "pack_years": 30.0,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Pack-years documented as exactly 30.0",
+        "All other criteria met"
+      ],
+      "predicted_decision": "covered",
+      "rationale": "Policy requires 'at least 30 pack-years.' Beneficiary meets this threshold exactly at 30 pack-years.",
+      "policy_cites": [
+        "The beneficiary must have a tobacco smoking history of at least 30 pack-years."
+      ]
+    },
+    {
+      "id": "ADV-005-SMOKING-QUIT-BOUNDARY",
+      "claim": {
+        "member_id": "SYNTHETIC-005",
+        "age": 65,
+        "pack_years": 35,
+        "smoking_status": "former_smoker",
+        "quit_date": "2009-01-15",
+        "years_since_quit": 15.0,
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Quit smoking exactly 15 years ago to the day",
+        "All other criteria met"
+      ],
+      "predicted_decision": "covered",
+      "rationale": "Policy permits beneficiary 'one who has quit smoking within the last 15 years.' Beneficiary quit exactly 15 years ago, meeting the threshold.",
+      "policy_cites": [
+        "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+      ]
+    },
+    {
+      "id": "ADV-006-SMOKING-QUIT-EXCEEDED",
+      "claim": {
+        "member_id": "SYNTHETIC-006",
+        "age": 68,
+        "pack_years": 32,
+        "smoking_status": "former_smoker",
+        "quit_date": "2008-06-15",
+        "years_since_quit": 15.6,
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Quit smoking 15.6 years ago, exceeding policy window of 15 years",
+        "All other criteria met"
+      ],
+      "predicted_decision": "not_covered",
+      "rationale": "Policy restricts to those 'who has quit smoking within the last 15 years.' Beneficiary quit 15.6 years ago, exceeding the 15-year window.",
+      "policy_cites": [
+        "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+      ]
+    },
+    {
+      "id": "ADV-007-ASYMPTOMATIC-MISSING-DOCUMENTATION",
+      "claim": {
+        "member_id": "SYNTHETIC-007",
+        "age": 66,
+        "pack_years": 31,
+        "smoking_status": "current_smoker",
+        "asymptomatic_documented": false,
+        "clinical_assessment": null,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "No documentation of asymptomatic status in medical record",
+        "All other criteria allegedly met but asymptomatic status unverified"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Policy requires beneficiary 'must be asymptomatic (no signs or symptoms of lung cancer).' Medical record does not document this requirement. Without explicit clinical assessment, coverage status cannot be determined from provided documentation.",
+      "policy_cites": [
+        "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+      ]
+    },
+    {
+      "id": "ADV-008-COUNSELING-VISIT-MISSING",
+      "claim": {
+        "member_id": "SYNTHETIC-008",
+        "age": 62,
+        "pack_years": 33,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": false,
+        "counseling_visit_date": null,
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "No prior counseling/SDM visit (G0296) documented",
+        "Claim requests G0297 without evidence of prior G0296"
+      ],
+      "predicted_decision": "not_covered",
+      "rationale": "Policy mandates 'receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.' No such prior visit is documented.",
+      "policy_cites": [
+        "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+      ]
+    },
+    {
+      "id": "ADV-009-COUNSELING-VISIT-WITHOUT-WRITTEN-ORDER",
+      "claim": {
+        "member_id": "SYNTHETIC-009",
+        "age": 59,
+        "pack_years": 30,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-10",
+        "written_order_for_ldct": false,
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Counseling visit (G0296) completed but no written order documented",
+        "Policy requires written order during the visit"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Policy requires 'receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit.' Counseling visit occurred but documentation does not confirm a written order was issued during that visit.",
+      "policy_cites": [
+        "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+      ]
+    },
+    {
+      "id": "ADV-010-PACK-YEARS-MISSING-DOCUMENTATION",
+      "claim": {
+        "member_id": "SYNTHETIC-010",
+        "age": 71,
+        "pack_years": null,
+        "pack_years_documented": false,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Pack-year history not documented in medical record",
+        "Clinical note only indicates 'heavy smoker' without quantification"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Policy mandates documentation of 'tobacco smoking history of at least 30 pack-years.' Medical record lacks specific pack-year calculation. Without quantified documentation, compliance with the 30 pack-year threshold cannot be verified.",
+      "policy_cites": [
+        "The beneficiary must have a tobacco smoking history of at least 30 pack-years."
+      ]
+    },
+    {
+      "id": "ADV-011-SMOKING-STATUS-MISSING-DOCUMENTATION",
+      "claim": {
+        "member_id": "SYNTHETIC-011",
+        "age": 67,
+        "pack_years": 31,
+        "smoking_status": "unknown",
+        "smoking_status_documented": false,
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Current/former smoker status not documented",
+        "Record does not clarify if beneficiary is active smoker or quit date"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Policy requires documentation that beneficiary is 'a current smoker or one who has quit smoking within the last 15 years.' Record does not establish which category applies or provide quit date. The smoking status criterion cannot be evaluated from available documentation.",
+      "policy_cites": [
+        "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+      ]
+    },
+    {
+      "id": "ADV-012-PROCEDURE-CODE-MISMATCH",
+      "claim": {
+        "member_id": "SYNTHETIC-012",
+        "age": 64,
+        "pack_years": 34,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "70450",
+        "requested_procedure_description": "CT chest without contrast"
+      },
+      "probes": [
+        "Non-covered procedure code submitted (70450 instead of G0297)",
+        "All clinical criteria met but incorrect billing code"
+      ],
+      "predicted_decision": "not_covered",
+      "rationale": "Policy specifies 'Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening).' Code 70450 is not included in the covered set. Only G0297 qualifies for LDCT lung cancer screening coverage.",
+      "policy_cites": [
+        "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening)."
+      ]
+    },
+    {
+      "id": "ADV-013-SYMPTOMATIC-PRESENTATION",
+      "claim": {
+        "member_id": "SYNTHETIC-013",
+        "age": 70,
+        "pack_years": 38,
+        "smoking_status": "current_smoker",
+        "asymptomatic": false,
+        "clinical_symptoms": "persistent cough, hemoptysis",
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Beneficiary presents with clinical symptoms (cough, hemoptysis)",
+        "Policy explicitly requires asymptomatic status"
+      ],
+      "predicted_decision": "not_covered",
+      "rationale": "Policy states beneficiary 'must be asymptomatic (no signs or symptoms of lung cancer).' This claim documents active symptoms, which disqualifies coverage under the screening indication.",
+      "policy_cites": [
+        "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+      ]
+    },
+    {
+      "id": "ADV-014-AGE-BOUNDARY-55-EXACT",
+      "claim": {
+        "member_id": "SYNTHETIC-014",
+        "age": 55,
+        "pack_years": 30,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Age is exactly 55, meeting minimum threshold",
+        "All other criteria met"
+      ],
+      "predicted_decision": "covered",
+      "rationale": "Policy requires 'age 55 \u2013 77 years.' Beneficiary is exactly 55 years old, meeting the minimum age requirement.",
+      "policy_cites": [
+        "The beneficiary must be age 55 \u2013 77 years."
+      ]
+    },
+    {
+      "id": "ADV-015-ANNUAL-FREQUENCY-UNCLEAR",
+      "claim": {
+        "member_id": "SYNTHETIC-015",
+        "age": 63,
+        "pack_years": 32,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_visit_completed": true,
+        "counseling_visit_date": "2024-01-15",
+        "prior_screening_ldct": "2023-03-20",
+        "months_since_prior_screening": 10,
+        "requested_procedure": "G0297"
+      },
+      "probes": [
+        "Prior LDCT screening performed 10 months ago",
+        "Policy allows 'once per year' but timing of next eligible screening unclear"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Policy states Medicare covers screening 'once per year,' but does not explicitly clarify whether this means calendar year, 12 months from prior screening, or other timing. Beneficiary had screening 10 months ago. Without precise timing specification in policy, frequency compliance is ambiguous.",
+      "policy_cites": [
+        "Medicare covers screening for lung cancer with low dose computed tomography (LDCT) once per year when all of the following criteria are met:"
+      ]
+    }
+  ]
+}

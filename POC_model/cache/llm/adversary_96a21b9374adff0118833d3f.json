@@ -1,0 +1,394 @@
+{
+  "claims": [
+    {
+      "id": "SYNTH-NCD-210.14-001",
+      "claim": {
+        "member_id": "SYN-M001",
+        "member_age": 54,
+        "pack_years": 35,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "age_threshold_under",
+        "boundary_54"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Member is age 54, just under the minimum threshold of 55 years. Policy explicitly requires 'age 55 \u2013 77 years'. All other criteria met, but age exclusion is absolute.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be age 55 \u2013 77 years.",
+          "start": 260,
+          "end": 302
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-002",
+      "claim": {
+        "member_id": "SYN-M002",
+        "member_age": 78,
+        "pack_years": 40,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "age_threshold_over",
+        "boundary_78"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Member is age 78, exceeding the maximum threshold of 77 years. Policy explicitly requires 'age 55 \u2013 77 years'. Age ceiling is absolute.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be age 55 \u2013 77 years.",
+          "start": 260,
+          "end": 302
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-003",
+      "claim": {
+        "member_id": "SYN-M003",
+        "member_age": 60,
+        "pack_years": 29.5,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "pack_year_boundary_under",
+        "boundary_29.5"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Member has 29.5 pack-years, just under the mandatory minimum of 30 pack-years. Policy requires 'at least 30 pack-years'. The sub-30 threshold is a clear disqualifier.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+          "start": 307,
+          "end": 385
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-004",
+      "claim": {
+        "member_id": "SYN-M004",
+        "member_age": 65,
+        "pack_years": 30.0,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "pack_year_boundary_exact",
+        "boundary_30"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Member has exactly 30 pack-years, meeting the 'at least 30 pack-years' minimum requirement. All other criteria satisfied.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+          "start": 307,
+          "end": 385
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-005",
+      "claim": {
+        "member_id": "SYN-M005",
+        "member_age": 62,
+        "pack_years": 35,
+        "smoking_status": "quit_16_years_ago",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "smoking_status_quit_over_15",
+        "boundary_16_years"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Member quit smoking 16 years ago, exceeding the permitted window of 15 years. Policy requires 'current smokers or one who has quit smoking within the last 15 years'. The 16-year quit date disqualifies.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "start": 390,
+          "end": 484
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-006",
+      "claim": {
+        "member_id": "SYN-M006",
+        "member_age": 68,
+        "pack_years": 32,
+        "smoking_status": "quit_15_years_ago",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "smoking_status_quit_exact_15",
+        "boundary_15_years"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Member quit smoking exactly 15 years ago, meeting the policy's 'within the last 15 years' criterion. All other criteria met.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "start": 390,
+          "end": 484
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-007",
+      "claim": {
+        "member_id": "SYN-M007",
+        "member_age": 55,
+        "pack_years": 40,
+        "smoking_status": "current_smoker",
+        "asymptomatic": false,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "asymptomatic_false",
+        "symptom_present"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Member is symptomatic (has signs or symptoms of lung cancer). Policy mandates 'The beneficiary must be asymptomatic'. Presence of symptoms is an absolute contraindication for screening.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+          "start": 489,
+          "end": 564
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-008",
+      "claim": {
+        "member_id": "SYN-M008",
+        "member_age": 70,
+        "pack_years": 45,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": false,
+        "written_order": false,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "sdm_visit_missing",
+        "no_shared_decision_making"
+      ],
+      "predicted_decision": "review",
+      "rationale": "No documentation of lung cancer screening counseling and shared decision-making visit (HCPCS G0296). Policy requires this visit prior to first screening. Missing SDM visit prevents eligibility confirmation and triggers mandatory review.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+          "start": 569,
+          "end": 763
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-009",
+      "claim": {
+        "member_id": "SYN-M009",
+        "member_age": 72,
+        "pack_years": 38,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": false,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "written_order_missing",
+        "sdm_visit_exists_no_order"
+      ],
+      "predicted_decision": "review",
+      "rationale": "SDM visit (G0296) documented but no evidence of written order for LDCT screening. Policy explicitly requires 'a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit' prior to first screening. Missing written order mandates review.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+          "start": 569,
+          "end": 763
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-010",
+      "claim": {
+        "member_id": "SYN-M010",
+        "member_age": 58,
+        "pack_years": 30,
+        "smoking_status": "undocumented",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "smoking_status_undocumented",
+        "missing_documentation"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Smoking status (current vs. quit within 15 years) is not documented. Policy requires confirmation of either current smoker or quit within 15 years. Cannot determine eligibility without this documentation; mandatory review required.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "start": 390,
+          "end": 484
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-011",
+      "claim": {
+        "member_id": "SYN-M011",
+        "member_age": 64,
+        "pack_years": null,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "pack_years_undocumented",
+        "missing_pack_year_documentation"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Pack-year history is not documented. Policy requires 'at least 30 pack-years'. Without documented pack-year history, cannot confirm this mandatory criterion. Manual review is required.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+          "start": 307,
+          "end": 385
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-012",
+      "claim": {
+        "member_id": "SYN-M012",
+        "member_age": 66,
+        "pack_years": 33,
+        "smoking_status": "current_smoker",
+        "asymptomatic": null,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "asymptomatic_status_undocumented",
+        "missing_symptom_documentation"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Asymptomatic status is not documented. Policy mandates 'The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)'. Without confirmation of asymptomatic status, this critical criterion cannot be verified. Manual review required.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+          "start": 489,
+          "end": 564
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-013",
+      "claim": {
+        "member_id": "SYN-M013",
+        "member_age": 61,
+        "pack_years": 31,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0298"
+      },
+      "probes": [
+        "wrong_procedure_code",
+        "non_covered_hcpcs"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Procedure code G0298 is not listed as covered. Policy specifies only 'HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening)' are covered. The submitted code G0298 is outside the covered procedure set.",
+      "policy_cites": [
+        {
+          "quote": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening).",
+          "start": 768,
+          "end": 880
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-014",
+      "claim": {
+        "member_id": "SYN-M014",
+        "member_age": 55,
+        "pack_years": 30,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0296"
+      },
+      "probes": [
+        "counseling_code_only",
+        "g0296_sdm_visit"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "All criteria met: age 55 (minimum), 30 pack-years (minimum), current smoker, asymptomatic, SDM visit with written order documented. G0296 is a covered procedure code for the mandatory counseling/SDM visit.",
+      "policy_cites": [
+        {
+          "quote": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening).",
+          "start": 768,
+          "end": 880
+        }
+      ]
+    },
+    {
+      "id": "SYNTH-NCD-210.14-015",
+      "claim": {
+        "member_id": "SYN-M015",
+        "member_age": 77,
+        "pack_years": 50,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "sdm_visit": true,
+        "written_order": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "age_at_maximum_boundary",
+        "boundary_77"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Member is age 77, at the exact maximum threshold. Policy specifies 'age 55 \u2013 77 years'. All other criteria met (50 pack-years well above 30, current smoker, asymptomatic, complete documentation). Age 77 is within covered range.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be age 55 \u2013 77 years.",
+          "start": 260,
+          "end": 302
+        }
+      ]
+    }
+  ]
+}

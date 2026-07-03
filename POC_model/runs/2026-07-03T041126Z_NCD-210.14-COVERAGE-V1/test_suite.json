@@ -1,0 +1,228 @@
+{
+  "claims": [
+    {
+      "id": "headline-flip-patient",
+      "claim": {
+        "member": {
+          "age_years": 52,
+          "sex": "F",
+          "pack_years": 22,
+          "smoker_status": "former",
+          "years_since_quit": 8,
+          "asymptomatic": true
+        },
+        "dos": "2026-01-15",
+        "px_codes": [
+          "G0297"
+        ],
+        "sdm_visit_completed": true,
+        "written_order": true,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "age_boundary",
+        "pack_years"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "52yo with 22 pack-years fails v1 thresholds (55/30)",
+      "policy_cites": [
+        {
+          "quote": "at least 30 pack-years"
+        }
+      ]
+    },
+    {
+      "id": "age-boundary-under",
+      "claim": {
+        "member": {
+          "age_years": 54,
+          "pack_years": 40,
+          "smoker_status": "current"
+        },
+        "px_codes": [
+          "G0297"
+        ],
+        "sdm_visit_completed": true,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "age_boundary"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Just under age minimum",
+      "policy_cites": [
+        {
+          "quote": "55 \u2013 77 years"
+        }
+      ]
+    },
+    {
+      "id": "age-boundary-at-min",
+      "claim": {
+        "member": {
+          "age_years": 55,
+          "pack_years": 40,
+          "smoker_status": "current"
+        },
+        "px_codes": [
+          "G0297"
+        ],
+        "sdm_visit_completed": true,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "age_boundary"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Exactly at age minimum with all other criteria met",
+      "policy_cites": [
+        {
+          "quote": "55 \u2013 77 years"
+        }
+      ]
+    },
+    {
+      "id": "pack-years-under",
+      "claim": {
+        "member": {
+          "age_years": 60,
+          "pack_years": 29,
+          "smoker_status": "current"
+        },
+        "px_codes": [
+          "G0297"
+        ],
+        "sdm_visit_completed": true,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "pack_years"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Just under pack-year threshold",
+      "policy_cites": [
+        {
+          "quote": "at least 30 pack-years"
+        }
+      ]
+    },
+    {
+      "id": "missing-sdm",
+      "claim": {
+        "member": {
+          "age_years": 60,
+          "pack_years": 40,
+          "smoker_status": "current"
+        },
+        "px_codes": [
+          "G0297"
+        ],
+        "sdm_visit_completed": false,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "missing_documentation"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "SDM visit required before first screening",
+      "policy_cites": [
+        {
+          "quote": "G0296"
+        }
+      ]
+    },
+    {
+      "id": "quit-too-long-ago",
+      "claim": {
+        "member": {
+          "age_years": 60,
+          "pack_years": 40,
+          "smoker_status": "former",
+          "years_since_quit": 16
+        },
+        "px_codes": [
+          "G0297"
+        ],
+        "sdm_visit_completed": true,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "smoker_status"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Former smoker quit more than 15 years ago",
+      "policy_cites": [
+        {
+          "quote": "quit smoking within the last 15 years"
+        }
+      ]
+    },
+    {
+      "id": "wrong-ldct-code",
+      "claim": {
+        "member": {
+          "age_years": 60,
+          "pack_years": 40,
+          "smoker_status": "current"
+        },
+        "px_codes": [
+          "99999"
+        ],
+        "sdm_visit_completed": true,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "code_boundary"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Procedure code not in covered set",
+      "policy_cites": [
+        {
+          "quote": "G0297"
+        }
+      ]
+    },
+    {
+      "id": "valid-full-claim",
+      "claim": {
+        "member": {
+          "age_years": 65,
+          "pack_years": 35,
+          "smoker_status": "current"
+        },
+        "px_codes": [
+          "G0297"
+        ],
+        "sdm_visit_completed": true,
+        "written_order": true,
+        "documentation": {
+          "min_pack_years": 30
+        }
+      },
+      "probes": [
+        "happy_path"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Meets all criteria",
+      "policy_cites": [
+        {
+          "quote": "at least 30 pack-years"
+        }
+      ]
+    }
+  ]
+}

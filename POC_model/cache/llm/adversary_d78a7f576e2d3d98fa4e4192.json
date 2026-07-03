@@ -1,0 +1,396 @@
+{
+  "claims": [
+    {
+      "id": "ADV-001-AGE-54",
+      "claim": {
+        "member_id": "SYNTHETIC-M001",
+        "age": 54,
+        "pack_years": 35,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "What is the minimum age boundary for LDCT coverage?",
+        "Does the policy allow coverage for beneficiaries age 54?",
+        "Is age 54 just-under the stated threshold?"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Beneficiary is 54 years old, which is 1 year below the stated minimum of 55 years. Policy explicitly requires 'age 55 \u2013 77 years'. This claim tests the lower age boundary.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be age 55 \u2013 77 years.",
+          "start": 260,
+          "end": 302
+        }
+      ]
+    },
+    {
+      "id": "ADV-002-AGE-78",
+      "claim": {
+        "member_id": "SYNTHETIC-M002",
+        "age": 78,
+        "pack_years": 40,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "What is the maximum age boundary for LDCT coverage?",
+        "Does the policy allow coverage for beneficiaries age 78?",
+        "Is age 78 just-over the stated threshold?"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Beneficiary is 78 years old, which exceeds the stated maximum of 77 years. Policy explicitly requires 'age 55 \u2013 77 years'. This claim tests the upper age boundary.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be age 55 \u2013 77 years.",
+          "start": 260,
+          "end": 302
+        }
+      ]
+    },
+    {
+      "id": "ADV-003-AGE-55-BOUNDARY",
+      "claim": {
+        "member_id": "SYNTHETIC-M003",
+        "age": 55,
+        "pack_years": 30,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "Is age 55 inclusive in the coverage range?",
+        "Does the policy cover exactly age 55?",
+        "What is the exact minimum qualifying age?"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Beneficiary is exactly 55 years old, meeting the minimum age threshold stated in the policy. All other criteria are met. This tests the lower boundary inclusion.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be age 55 \u2013 77 years.",
+          "start": 260,
+          "end": 302
+        }
+      ]
+    },
+    {
+      "id": "ADV-004-AGE-77-BOUNDARY",
+      "claim": {
+        "member_id": "SYNTHETIC-M004",
+        "age": 77,
+        "pack_years": 35,
+        "smoking_status": "quit_14_years_ago",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "Is age 77 inclusive in the coverage range?",
+        "Does the policy cover exactly age 77?",
+        "What is the exact maximum qualifying age?"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Beneficiary is exactly 77 years old, meeting the maximum age threshold. Quit smoking 14 years ago, within the 15-year window. All other criteria are met. This tests the upper boundary inclusion.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be age 55 \u2013 77 years.",
+          "start": 260,
+          "end": 302
+        }
+      ]
+    },
+    {
+      "id": "ADV-005-PACK-YEARS-29",
+      "claim": {
+        "member_id": "SYNTHETIC-M005",
+        "age": 62,
+        "pack_years": 29,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "What is the minimum pack-year threshold?",
+        "Does the policy allow coverage for 29 pack-years?",
+        "Is 29 pack-years just-under the required minimum?"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Beneficiary has 29 pack-years of smoking history, which is 1 pack-year below the stated minimum of 'at least 30 pack-years'. This tests the lower pack-year boundary.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+          "start": 307,
+          "end": 385
+        }
+      ]
+    },
+    {
+      "id": "ADV-006-PACK-YEARS-30-BOUNDARY",
+      "claim": {
+        "member_id": "SYNTHETIC-M006",
+        "age": 65,
+        "pack_years": 30,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "Is 30 pack-years inclusive in the coverage criterion?",
+        "Does the policy cover exactly 30 pack-years?",
+        "What is the exact minimum pack-year threshold?"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Beneficiary has exactly 30 pack-years, meeting the stated minimum of 'at least 30 pack-years'. All other criteria are met. This tests pack-year boundary inclusion.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+          "start": 307,
+          "end": 385
+        }
+      ]
+    },
+    {
+      "id": "ADV-007-QUIT-16-YEARS",
+      "claim": {
+        "member_id": "SYNTHETIC-M007",
+        "age": 68,
+        "pack_years": 32,
+        "smoking_status": "quit_16_years_ago",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "Does the policy allow beneficiaries who quit smoking 16 years ago?",
+        "Is the 15-year quit window strictly enforced?",
+        "What is the exact maximum time since quitting?"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Beneficiary quit smoking 16 years ago, exceeding the stated requirement of 'within the last 15 years'. This tests the smoking recency boundary.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "start": 390,
+          "end": 484
+        }
+      ]
+    },
+    {
+      "id": "ADV-008-QUIT-15-YEARS-BOUNDARY",
+      "claim": {
+        "member_id": "SYNTHETIC-M008",
+        "age": 70,
+        "pack_years": 35,
+        "smoking_status": "quit_15_years_ago",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "Is the 15-year quit window inclusive?",
+        "Does the policy cover beneficiaries who quit exactly 15 years ago?",
+        "What is the exact maximum time since quitting?"
+      ],
+      "predicted_decision": "approve",
+      "rationale": "Beneficiary quit smoking exactly 15 years ago, meeting the criterion of 'within the last 15 years'. All other criteria are satisfied. This tests the smoking recency boundary inclusion.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "start": 390,
+          "end": 484
+        }
+      ]
+    },
+    {
+      "id": "ADV-009-PACK-YEARS-MISSING",
+      "claim": {
+        "member_id": "SYNTHETIC-M009",
+        "age": 63,
+        "pack_years": null,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "What happens when pack-year history is not documented?",
+        "Can coverage be approved without pack-year documentation?",
+        "Does missing pack-year history require manual review?"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Beneficiary's pack-year history is missing or undocumented. The rule explicitly allows for manual_review when 'Pack-year smoking history is missing or undocumented; cannot determine if the 30 pack-year minimum is met.' Without this critical documentation, the claim cannot be automatically approved.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must have a tobacco smoking history of at least 30 pack-years.",
+          "start": 307,
+          "end": 385
+        }
+      ]
+    },
+    {
+      "id": "ADV-010-SMOKING-STATUS-MISSING",
+      "claim": {
+        "member_id": "SYNTHETIC-M010",
+        "age": 66,
+        "pack_years": 32,
+        "smoking_status": null,
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "What happens when current smoking status is not documented?",
+        "Can coverage be approved without documented smoking status?",
+        "Does the rule allow approval when smoking status is unclear?"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Beneficiary's current smoking status is not documented. The policy requires verification of either current smoker or quit within 15 years. Without this documentation, the rule structure suggests manual review is needed to determine eligibility.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "start": 390,
+          "end": 484
+        }
+      ]
+    },
+    {
+      "id": "ADV-011-ASYMPTOMATIC-MISSING",
+      "claim": {
+        "member_id": "SYNTHETIC-M011",
+        "age": 67,
+        "pack_years": 38,
+        "smoking_status": "current_smoker",
+        "asymptomatic": null,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "What happens when asymptomatic status is not documented?",
+        "Can coverage be approved without confirmation of asymptomatic status?",
+        "Does the rule require manual review when asymptomatic status is unclear?"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Asymptomatic status is missing or undocumented. The rule structure includes a manual_review condition for when 'Asymptomatic status is missing or undocumented/unclear; cannot determine if the beneficiary is free of signs or symptoms of lung cancer.'",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+          "start": 489,
+          "end": 564
+        }
+      ]
+    },
+    {
+      "id": "ADV-012-COUNSELING-SDM-MISSING",
+      "claim": {
+        "member_id": "SYNTHETIC-M012",
+        "age": 71,
+        "pack_years": 40,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": null,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "What happens when counseling/SDM visit documentation is missing?",
+        "Can G0297 be approved without prior G0296 counseling visit?",
+        "Does the rule require manual review when counseling documentation is unclear?"
+      ],
+      "predicted_decision": "review",
+      "rationale": "Documentation of counseling/SDM visit (G0296) and written order is missing or unclear. The rule explicitly allows for manual_review when 'Written order and/or counseling/SDM visit documentation is missing or unclear; cannot determine if this requirement is satisfied.'",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+          "start": 569,
+          "end": 763
+        }
+      ]
+    },
+    {
+      "id": "ADV-013-PROCEDURE-CODE-G0298",
+      "claim": {
+        "member_id": "SYNTHETIC-M013",
+        "age": 60,
+        "pack_years": 35,
+        "smoking_status": "current_smoker",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0298"
+      },
+      "probes": [
+        "Are non-standard procedure codes covered for LDCT screening?",
+        "Does the policy only cover G0296 and G0297?",
+        "What happens when an uncovered procedure code is used?"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Procedure code G0298 is not listed among the covered codes. Policy explicitly states 'Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening).' Only these two codes are covered.",
+      "policy_cites": [
+        {
+          "quote": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and HCPCS G0297 (LDCT lung cancer screening).",
+          "start": 768,
+          "end": 880
+        }
+      ]
+    },
+    {
+      "id": "ADV-014-SYMPTOMATIC-CHEST-PAIN",
+      "claim": {
+        "member_id": "SYNTHETIC-M014",
+        "age": 64,
+        "pack_years": 36,
+        "smoking_status": "current_smoker",
+        "asymptomatic": false,
+        "symptoms": "chest_pain_and_cough",
+        "counseling_sdm_completed": true,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "Does the policy cover screening for symptomatic beneficiaries?",
+        "What constitutes 'asymptomatic' in the context of lung cancer screening?",
+        "Are beneficiaries with symptoms automatically denied?"
+      ],
+      "predicted_decision": "deny",
+      "rationale": "Beneficiary reports symptoms (chest pain and cough), indicating they are not asymptomatic. Policy explicitly requires 'asymptomatic (no signs or symptoms of lung cancer)'. Symptomatic beneficiaries do not meet coverage criteria.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+          "start": 489,
+          "end": 564
+        }
+      ]
+    },
+    {
+      "id": "ADV-015-NO-WRITTEN-ORDER",
+      "claim": {
+        "member_id": "SYNTHETIC-M015",
+        "age": 73,
+        "pack_years": 42,
+        "smoking_status": "quit_12_years_ago",
+        "asymptomatic": true,
+        "counseling_sdm_completed": true,
+        "written_order_present": false,
+        "procedure_code": "G0297"
+      },
+      "probes": [
+        "Is a written order from the counseling/SDM visit mandatory?",
+        "Can screening proceed without documented written order?",
+        "What is the relationship between G0296 counseling and the written order requirement?"
+      ],
+      "predicted_decision": "review",
+      "rationale": "While counseling/SDM visit may have occurred, the presence of a written order is not documented. The policy explicitly requires 'receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit'. Absence of documented written order creates ambiguity requiring manual review.",
+      "policy_cites": [
+        {
+          "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+          "start": 569,
+          "end": 763
+        }
+      ]
+    }
+  ]
+}

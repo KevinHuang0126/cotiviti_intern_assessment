@@ -1,0 +1,45 @@
+[
+  {
+    "round": 1,
+    "rule_hash": "ca6898813c5647b4",
+    "failure_count": 1,
+    "failures": [
+      {
+        "test_id": "age-boundary-under",
+        "claim": {
+          "member": {
+            "age_years": 54,
+            "pack_years": 40,
+            "smoker_status": "current"
+          },
+          "px_codes": [
+            "G0297"
+          ],
+          "sdm_visit_completed": true,
+          "documentation": {
+            "min_pack_years": 30
+          }
+        },
+        "predicted_decision": "deny",
+        "actual_decision": "approve",
+        "rationale": "Just under age minimum",
+        "policy_cites": [
+          {
+            "quote": "55 \u2013 77 years"
+          }
+        ],
+        "probes": [
+          "age_boundary"
+        ]
+      }
+    ],
+    "changelog": []
+  },
+  {
+    "round": 2,
+    "rule_hash": "f73e8a71db408964",
+    "failure_count": 0,
+    "failures": [],
+    "changelog": []
+  }
+]

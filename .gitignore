@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+
+# Python (also covered by POC_model/.gitignore)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Secrets (defense in depth; POC_model/.gitignore also ignores it)
+.env

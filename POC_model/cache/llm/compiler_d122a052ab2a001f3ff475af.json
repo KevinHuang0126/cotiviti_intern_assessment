@@ -1,0 +1,235 @@
+{
+  "criterionId": "NCD-210.14-COVERAGE-V2-LDCT-LUNG-CA-SCREENING",
+  "title": "Lung Cancer Screening with LDCT \u2014 Coverage Criteria",
+  "description": "Medicare coverage criteria for annual LDCT lung cancer screening per NCD 210.14 (v2, CAG-00439R).",
+  "outcome": "covered_with_conditions",
+  "policy": {
+    "policyId": "NCD-210.14",
+    "policyType": "NCD",
+    "version": "CAG-00439R",
+    "effectiveDate": "2022-02-10",
+    "url": ""
+  },
+  "condition": {
+    "op": "and",
+    "of": [
+      {
+        "op": "age",
+        "age": {
+          "min": {
+            "value": 50,
+            "unit": "year"
+          },
+          "max": {
+            "value": 77,
+            "unit": "year"
+          }
+        },
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V2",
+            "section": "NCD-210.14-COVERAGE-V2",
+            "quote": "The beneficiary must be Age 50 - 77 years.",
+            "span": {
+              "start": 0,
+              "end": 0,
+              "text": "The beneficiary must be Age 50 - 77 years."
+            }
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "pack-year-history",
+          "text": "The beneficiary must have a tobacco smoking history of at least 20 pack-years.",
+          "required": true
+        },
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V2",
+            "section": "NCD-210.14-COVERAGE-V2",
+            "quote": "The beneficiary must have a tobacco smoking history of at least 20 pack-years.",
+            "span": {
+              "start": 0,
+              "end": 0,
+              "text": "The beneficiary must have a tobacco smoking history of at least 20 pack-years."
+            }
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "current-or-recent-quit-smoker",
+          "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "required": true
+        },
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V2",
+            "section": "NCD-210.14-COVERAGE-V2",
+            "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+            "span": {
+              "start": 0,
+              "end": 0,
+              "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+            }
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "asymptomatic",
+          "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+          "required": true
+        },
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V2",
+            "section": "NCD-210.14-COVERAGE-V2",
+            "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+            "span": {
+              "start": 0,
+              "end": 0,
+              "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+            }
+          }
+        ]
+      },
+      {
+        "op": "documentation",
+        "documentation": {
+          "id": "written-order-sdm-visit",
+          "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+          "required": true
+        },
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V2",
+            "section": "NCD-210.14-COVERAGE-V2",
+            "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+            "span": {
+              "start": 0,
+              "end": 0,
+              "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+            }
+          }
+        ]
+      },
+      {
+        "op": "code_set",
+        "codeSet": {
+          "kind": "procedure_covered",
+          "codes": [
+            {
+              "system": "HCPCS",
+              "code": "G0296",
+              "display": "Counseling visit to discuss need for lung cancer screening using LDCT"
+            },
+            {
+              "system": "CPT",
+              "code": "71271",
+              "display": "CT thorax low dose for lung cancer screening"
+            }
+          ]
+        },
+        "citations": [
+          {
+            "sourceId": "NCD-210.14-COVERAGE-V2",
+            "section": "NCD-210.14-COVERAGE-V2",
+            "quote": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and CPT 71271 (CT thorax low dose for lung cancer screening).",
+            "span": {
+              "start": 0,
+              "end": 0,
+              "text": "Covered procedure codes include HCPCS G0296 (counseling/SDM visit) and CPT 71271 (CT thorax low dose for lung cancer screening)."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "documentation": [
+    {
+      "id": "pack-year-history",
+      "text": "The beneficiary must have a tobacco smoking history of at least 20 pack-years.",
+      "required": true,
+      "citations": [
+        {
+          "sourceId": "NCD-210.14-COVERAGE-V2",
+          "section": "NCD-210.14-COVERAGE-V2",
+          "quote": "The beneficiary must have a tobacco smoking history of at least 20 pack-years.",
+          "span": {
+            "start": 0,
+            "end": 0,
+            "text": "The beneficiary must have a tobacco smoking history of at least 20 pack-years."
+          }
+        }
+      ]
+    },
+    {
+      "id": "current-or-recent-quit-smoker",
+      "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+      "required": true,
+      "citations": [
+        {
+          "sourceId": "NCD-210.14-COVERAGE-V2",
+          "section": "NCD-210.14-COVERAGE-V2",
+          "quote": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years.",
+          "span": {
+            "start": 0,
+            "end": 0,
+            "text": "The beneficiary must be a current smoker or one who has quit smoking within the last 15 years."
+          }
+        }
+      ]
+    },
+    {
+      "id": "asymptomatic",
+      "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+      "required": true,
+      "citations": [
+        {
+          "sourceId": "NCD-210.14-COVERAGE-V2",
+          "section": "NCD-210.14-COVERAGE-V2",
+          "quote": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer).",
+          "span": {
+            "start": 0,
+            "end": 0,
+            "text": "The beneficiary must be asymptomatic (no signs or symptoms of lung cancer)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "written-order-sdm-visit",
+      "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+      "required": true,
+      "citations": [
+        {
+          "sourceId": "NCD-210.14-COVERAGE-V2",
+          "section": "NCD-210.14-COVERAGE-V2",
+          "quote": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening.",
+          "span": {
+            "start": 0,
+            "end": 0,
+            "text": "The beneficiary must receive a written order for LDCT lung cancer screening during a lung cancer screening counseling and shared decision-making visit (HCPCS G0296) prior to the first screening."
+          }
+        }
+      ]
+    }
+  ],
+  "citations": [
+    {
+      "sourceId": "NCD-210.14-COVERAGE-V2",
+      "section": "NCD-210.14-COVERAGE-V2",
+      "quote": "Medicare covers screening for lung cancer with low dose computed tomography (LDCT) once per year when all of the following criteria are met:",
+      "span": {
+        "start": 0,
+        "end": 0,
+        "text": "Medicare covers screening for lung cancer with low dose computed tomography (LDCT) once per year when all of the following criteria are met:"
+      }
+    }
+  ]
+}
